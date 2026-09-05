@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0e1116;
+  --color-charcoal: #171b22;
+  --color-gold: #d6a62b;
+  --color-silver: #dde1e6;
+  --color-paper: #f6f5f2;
+  --color-white: #ffffff;
+}
+
+/*
+  Type stack — a confident, slightly architectural display face paired with
+  a clean workhorse body face and a technical mono for labels/eyebrows. This
+  keeps the site from reading as a templated default. Swap for self-hosted
+  or next/font files if you want closer control over the exact display face.
+*/
+:root {
+  --font-display: "Futura", "Century Gothic", "Segoe UI Semibold", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-label {
+  font-family: var(--font-mono);
+}
+
+/* Signature thin gold line used at section joins — part of the site's
+   visual identity rather than a generic divider. */
+.seam {
+  position: relative;
+}
+.seam::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold) 20%, var(--color-gold) 80%, transparent);
+  opacity: 0.6;
+}
+
+/* Oversized watermark monogram — a recurring distinctive brand device used
+   behind certain sections instead of generic stock photography. */
+.kc-watermark {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-gold);
+  opacity: 0.05;
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Angled section divider — a small but distinctive geometric signature so
+   sections don't just stack as flat rectangles. */
+.angle-divider {
+  position: relative;
+}
+.angle-divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 48px;
+  background: inherit;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.lift:hover {
+  transform: translateY(-3px);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  padding: 12px 20px;
+  z-index: 100;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up-enter {
+  animation: fade-up 0.6s ease both;
+}
