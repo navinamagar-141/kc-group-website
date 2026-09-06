@@ -9,7 +9,7 @@ import { company, whyChooseUs, serviceAreas } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "KC Group of Companies Pty Ltd — started as a cleaning company in 2018, now established across both cleaning and removals for NSW and South Australia.",
+    "KC Group of Companies Pty Ltd, started as a cleaning company in 2018, now established across both cleaning and removals for NSW and South Australia.",
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
               <div className="flex flex-col gap-5 max-w-xl">
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Our story</h2>
                 <p className="text-ink/70 leading-relaxed">
-                  {company.legalName} began in {company.established} as a cleaning company, working with households and businesses across New South Wales. Over time, the same focus on reliable, presentation-focused work led to the addition of a removals service — and today KC Group is established as a two-service business covering both cleaning and removals.
+                  {company.legalName} began in {company.established} as a cleaning company, working with households and businesses across New South Wales. Over time, the same focus on reliable, presentation-focused work led to the addition of a removals service, and today KC Group is established as a two-service business covering both cleaning and removals.
                 </p>
                 <p className="text-ink/70 leading-relaxed">
                   That shared foundation means clients get one point of contact whether the job is a routine office clean or a full business relocation, with the same standard of communication and care applied across both sides of the business.
