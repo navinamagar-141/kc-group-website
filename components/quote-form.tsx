@@ -25,6 +25,7 @@ export default function QuoteForm() {
   const categoryOptions = useMemo(() => {
     if (serviceType === "Cleaning") return quoteServiceOptions.cleaningCategory;
     if (serviceType === "Removals") return quoteServiceOptions.removalCategory;
+    if (serviceType === "Car Detailing") return quoteServiceOptions.carDetailingCategory;
     return [];
   }, [serviceType]);
 

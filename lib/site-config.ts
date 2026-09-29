@@ -20,6 +20,40 @@ export const company = {
     "Reliable cleaning and removal teams for homes, businesses, builders and facilities across New South Wales and South Australia.",
 };
 
+export type ServiceBrandLink = {
+  slug: string;        // used for the page route, e.g. /car-detailing
+  brandName: string;   // shown as the sub-brand name, e.g. "Kar Care"
+  navLabel: string;    // shown in the header/footer nav
+  tagline: string;
+  description: string;
+  isPrimary?: boolean; // true only for Cleaning, the main service
+};
+
+export const serviceBrands: ServiceBrandLink[] = [
+  {
+    slug: "cleaning",
+    brandName: "KC Group Cleaning",
+    navLabel: "Cleaning",
+    tagline: "Our main service",
+    description: "Professional cleaning for homes, offices and project-based work.",
+    isPrimary: true,
+  },
+  {
+    slug: "removals",
+    brandName: "KC Removals",
+    navLabel: "KC Removals",
+    tagline: "Residential & commercial removals",
+    description: "Flexible removal and relocation support for households and businesses.",
+  },
+  {
+    slug: "car-detailing",
+    brandName: "Kar Care",
+    navLabel: "Kar Care",
+    tagline: "Professional car detailing",
+    description: "Professional car detailing services — exterior, interior and paint protection.",
+  },
+];
+
 export const whatsappHref = company.whatsappNumber
   ? `https://wa.me/${company.whatsappNumber}`
   : null;
@@ -52,7 +86,8 @@ export const socialLinks = {
 export const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Cleaning", href: "/cleaning" },
-  { label: "Removals", href: "/removals" },
+  { label: "KC Removals", href: "/removals" },
+  { label: "Kar Care", href: "/car-detailing" },
   { label: "Commercial", href: "/commercial" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
@@ -68,11 +103,12 @@ export const footerNav = {
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Cleaning Services", href: "/cleaning" },
-    { label: "Removal Services", href: "/removals" },
-    { label: "Request a Quote", href: "/quote" },
-    { label: "Service Areas", href: "/#service-areas" },
-  ],
+  { label: "Cleaning Services", href: "/cleaning" },
+  { label: "KC Removals", href: "/removals" },
+  { label: "Kar Care", href: "/car-detailing" },
+  { label: "Request a Quote", href: "/quote" },
+  { label: "Service Areas", href: "/#service-areas" },
+],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms & Conditions", href: "/terms" },
@@ -168,6 +204,38 @@ export const removalCategories: ServiceCategory[] = [
   },
 ];
 
+export const carDetailingCategories: ServiceCategory[] = [
+  {
+    slug: "exterior",
+    title: "Exterior Detailing",
+    intro: "A thorough clean and protective finish for the outside of the vehicle.",
+    items: [
+      { name: "Hand Wash & Wax", description: "Careful hand wash followed by a protective wax finish." },
+      { name: "Paint Decontamination", description: "Removing embedded contaminants before polishing or protection." },
+      { name: "Wheel & Tyre Detailing", description: "Wheels, tyres and arches cleaned and dressed." },
+    ],
+  },
+  {
+    slug: "interior",
+    title: "Interior Detailing",
+    intro: "Deep cleaning for the cabin, seats and trim.",
+    items: [
+      { name: "Interior Vacuum & Wipe-Down", description: "Seats, carpets, dash and door trims cleaned throughout." },
+      { name: "Steam Cleaning", description: "Deeper clean for upholstery, carpets and hard-to-reach areas." },
+      { name: "Leather Care", description: "Cleaning and conditioning for leather seats and trim." },
+    ],
+  },
+  {
+    slug: "protection",
+    title: "Paint Correction & Protection",
+    intro: "Longer-term protection and presentation for the vehicle's paintwork.",
+    items: [
+      { name: "Paint Correction", description: "Reducing swirl marks and light surface imperfections." },
+      { name: "Ceramic Coating", description: "A longer-lasting protective coating applied to the paintwork." },
+    ],
+  },
+];
+
 export const whyChooseUs = [
   { title: "Professional Communication", description: "Clear, responsive communication from first enquiry through to job completion." },
   { title: "Clear Quote Process", description: "A straightforward path from enquiry to a tailored, obligation-free quote." },
@@ -178,9 +246,10 @@ export const whyChooseUs = [
 ];
 
 export const quoteServiceOptions = {
-  serviceType: ["Cleaning", "Removals", "Commercial"] as const,
+  serviceType: ["Cleaning", "Removals", "Car Detailing", "Commercial"] as const,
   cleaningCategory: cleaningCategories.flatMap((c) => c.items.map((i) => i.name)),
   removalCategory: removalCategories.flatMap((c) => c.items.map((i) => i.name)),
+  carDetailingCategory: carDetailingCategories.flatMap((c) => c.items.map((i) => i.name)),
   commercialCategory: ["Commercial Cleaning", "Commercial Removals"],
   jobType: ["Residential", "Commercial"] as const,
   frequency: ["One-off", "Ongoing / Recurring"] as const,
