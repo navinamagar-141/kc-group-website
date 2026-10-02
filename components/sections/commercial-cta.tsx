@@ -17,7 +17,7 @@ export default function CommercialCta() {
             Request a Free Site Inspection &amp; Tailored Proposal
           </h2>
           <p className="text-ink/75 text-base leading-relaxed">
-            For offices, gyms, retail, strata and facilities — a scoped proposal built around your site.
+            For offices, gyms, retail, strata and facilities, a scoped proposal built around your site.
           </p>
         </div>
         <Button href="/commercial-cleaning" variant="outline-dark" className="border-ink/40 shrink-0">
