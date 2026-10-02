@@ -43,7 +43,7 @@ export default function SiteHeader() {
     >
       <Container className="flex items-center justify-between h-[72px]">
         <Link href="/" className="shrink-0" aria-label="KC Group home">
-          <LogoMark variant="light" />
+          <LogoMark className="h-10" />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-6 xl:gap-8">

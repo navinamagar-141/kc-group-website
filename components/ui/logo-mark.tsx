@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-export default function LogoMark({ className = "h-14 w-auto" }: { className?: string }) {
+export default function LogoMark({
+  className = "h-14 w-auto",
+}: {
+  className?: string;
+  variant?: string;
+}) {
   return (
     <Image
       src="/images/logo.png"

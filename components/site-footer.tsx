@@ -39,7 +39,7 @@ export default function SiteFooter() {
       <Container className="pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
-            <LogoMark variant="light" />
+            <LogoMark className="h-10" />
             <p className="text-sm leading-relaxed text-white/60 max-w-xs">{company.description}</p>
             {activeSocials.length > 0 ? (
               <div className="flex items-center gap-3 pt-2">
