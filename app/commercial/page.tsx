@@ -11,7 +11,7 @@ import { industries } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Commercial Services",
   description:
-    "Commercial cleaning and commercial removals for Australian businesses across NSW and South Australia — two clear service paths, one point of contact.",
+    "Commercial cleaning and commercial removals for Australian businesses across NSW and South Australia, two clear service paths, one point of contact.",
 };
 
 export default function CommercialPage() {
@@ -20,7 +20,7 @@ export default function CommercialPage() {
       <PageHero
         eyebrow="Commercial Services"
         title="Solutions designed around the needs of Australian businesses"
-        description="Commercial work is split into two clear paths — cleaning and removals — so it's easy to find the right service and request the right quote."
+        description="Commercial work is split into two clear paths cleaning and removals, so it's easy to find the right service and request the right quote."
       />
 
       <section className="bg-paper">
@@ -31,7 +31,7 @@ export default function CommercialPage() {
                 <span className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Path One</span>
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Commercial Cleaning</h2>
                 <p className="text-ink/65 text-sm leading-relaxed">
-                  Professional cleaning solutions for business environments — offices, retail, hospitality, facilities and construction or handover sites.
+                  Professional cleaning solutions for business environments: offices, retail, hospitality, facilities and construction or handover sites.
                 </p>
                 <ul className="flex flex-col gap-2 text-sm text-ink/70">
                   <li>&bull; Office &amp; workplace cleaning</li>
@@ -51,7 +51,7 @@ export default function CommercialPage() {
                 <span className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Path Two</span>
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Commercial Removals</h2>
                 <p className="text-ink/65 text-sm leading-relaxed">
-                  Practical relocation support for businesses and workplaces — office moves and other commercial relocation requirements.
+                  Practical relocation support for businesses and workplaces, office moves and other commercial relocation requirements.
                 </p>
                 <ul className="flex flex-col gap-2 text-sm text-ink/70">
                   <li>&bull; Office &amp; business relocations</li>

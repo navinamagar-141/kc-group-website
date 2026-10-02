@@ -13,7 +13,7 @@ export default function TermsPage() {
         <Container className="py-16 sm:py-20">
           <div className="max-w-2xl flex flex-col gap-6 text-ink/70 leading-relaxed">
             <p>
-              These placeholder terms outline the kind of content a completed terms and conditions page for {company.legalName} would typically cover — how quote requests and bookings are handled, how pricing is confirmed, cancellation arrangements, and the basis on which cleaning and removal services are provided.
+              These placeholder terms outline the kind of content a completed terms and conditions page for {company.legalName} would typically cover, how quote requests and bookings are handled, how pricing is confirmed, cancellation arrangements, and the basis on which cleaning and removal services are provided.
             </p>
             <p>This content has not yet been legally reviewed. Please replace this page with terms prepared or approved by a qualified professional before the website is published.</p>
             <p>
