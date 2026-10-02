@@ -17,6 +17,7 @@ import CommercialCta from "@/components/sections/commercial-cta";
 import { company, serviceAreas, whyChooseUs, generalFaqs, whatsappHref } from "@/lib/site-config";
 import { servicePages } from "@/lib/service-pages";
 import { getApprovedReviews } from "@/lib/reviews-store";
+import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
@@ -31,12 +32,18 @@ export default async function Home() {
     <>
       {/* 1. HERO — service + location + Call / WhatsApp / Free Quote */}
       <section className="relative bg-ink text-white overflow-hidden">
-        <span
-          className="absolute -right-16 -top-10 font-display font-extrabold text-gold/5 text-[260px] leading-[0.8] pointer-events-none select-none"
-          aria-hidden="true"
-        >
-          KC
-        </span>
+     <div 
+  className="absolute -right-10 top-1/2 -translate-y-1/2 w-[320px] h-[320px] opacity-10 pointer-events-none"
+  aria-hidden="true"
+>
+  <Image
+    src="/images/logo.png"
+    alt=""
+    fill
+    className="object-contain"
+    priority
+  />
+</div>
         <Container className="relative py-20 sm:py-24 lg:py-28">
           <div className="flex flex-col gap-6 max-w-3xl">
             <span className="font-mono-label text-xs uppercase tracking-[0.22em] text-gold">
