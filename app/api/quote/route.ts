@@ -100,8 +100,7 @@ export async function POST(req: NextRequest) {
 }
 
 async function sendQuoteEmail(submission: Record<string, string | number>, files: File[]) {
-  const notifyTo = process.env.QUOTE_NOTIFICATION_EMAIL || "kgccompany48@gmail.com";
-
+  const notifyTo = process.env.QUOTE_NOTIFICATION_EMAIL || "kcgcompanies48@gmail.com";
   const attachments = await Promise.all(
     files.map(async (file) => ({
       filename: file.name,

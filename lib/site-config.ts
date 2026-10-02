@@ -8,12 +8,10 @@ export const company = {
   established: 2018,
   domain: "kc-group-website.vercel.app", // TODO: replace with the final .com.au domain
   url: "https://kc-group-website.vercel.app", // TODO: replace with the final .com.au domain
-  email: "kgccompany48@gmail.com",
-  phone: "0451 331 522",
-  phoneHref: "tel:+61451331522",
-  // Derived for the WhatsApp button from the confirmed mobile number
-  // (0451 331 522 → 61 451 331 522 in international format for wa.me).
-  whatsappNumber: "61451331522",
+  email: "kcgcompanies48@gmail.com",
+  phone: "0434 521 860",
+  phoneHref: "tel:+61434521860",
+  whatsappNumber: "61434521860",
   abn: "TODO: ABN TO BE CONFIRMED",
   tagline: "Professional Cleaning & Removal Services",
   description:
@@ -127,7 +125,7 @@ export const cleaningCategories: ServiceCategory[] = [
   {
     slug: "residential",
     title: "Residential Cleaning",
-    intro: "Regular upkeep or a one-off reset — cleaning built around how a household actually lives.",
+    intro: "Regular upkeep or a one-off reset, cleaning built around how a household actually lives.",
     items: [
       { name: "Regular Cleaning", description: "Ongoing scheduled cleaning to keep a home consistently presentable." },
       { name: "One-Off Cleaning", description: "A single visit for a spring clean, a special occasion, or general catch-up." },
