@@ -76,7 +76,7 @@ export default async function Home() {
           <FadeUp>
             <SectionHeading
               eyebrow="Where to start"
-              title="Cleaning or removals — choose your service"
+              title="Cleaning or removals, choose your service"
               description="Two capabilities, one point of contact. Tell us what you need and we'll take it from there."
             />
           </FadeUp>
@@ -84,7 +84,7 @@ export default async function Home() {
             <FadeUp>
               <ServiceCard
                 title="Cleaning Services"
-                description="Professional cleaning for homes, offices and project-based work — regular visits or a single deep clean."
+                description="Professional cleaning for homes, offices and project-based work, regular visits or a single deep clean."
                 href="/cleaning"
                 cta="Explore Cleaning"
                 icon={
@@ -139,7 +139,7 @@ export default async function Home() {
       <section className="bg-ink text-white seam">
         <Container className="py-20 sm:py-24">
           <FadeUp>
-            <SectionHeading eyebrow="Recent work" title="Real Work. Real Results." tone="light" description="Genuine project photography will replace these placeholders as jobs are completed and approved for publishing." />
+            <SectionHeading eyebrow="Recent work" title="Our Team at Work" tone="light" description="A look at the KC Group team across homes, offices, gyms and facilities." />
           </FadeUp>
           <FadeUp delay={100}>
             <div className="mt-10">
@@ -216,7 +216,7 @@ export default async function Home() {
       <section className="bg-white">
         <Container className="py-20 sm:py-24">
           <FadeUp>
-            <SectionHeading eyebrow="Case studies" title="Project Case Studies" description="Short write-ups of real jobs — added as they're completed and approved for publishing." />
+            <SectionHeading eyebrow="Case studies" title="Project Case Studies" description="Short write-ups of real jobs added as they're completed and approved for publishing." />
           </FadeUp>
           <FadeUp delay={100}>
             <div className="mt-10">
