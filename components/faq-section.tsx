@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "Is the quote obligation-free?",
-    a: "Yes. Submitting a request doesn't commit you to booking — it simply starts the conversation so we can scope the job properly.",
+    a: "Yes. Submitting a request doesn't commit you to booking, it simply starts the conversation so we can scope the job properly.",
   },
   {
     q: "Do you service my area?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Can I request both cleaning and removals?",
-    a: "Yes — choose the service that best matches your main need, then mention the other requirement in the job details field.",
+    a: "Yes, choose the service that best matches your main need, then mention the other requirement in the job details field.",
   },
 ];
 
