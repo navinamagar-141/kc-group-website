@@ -47,17 +47,17 @@ export default async function Home() {
         <Container className="relative py-20 sm:py-24 lg:py-28">
           <div className="flex flex-col gap-6 max-w-3xl">
             <span className="font-mono-label text-xs uppercase tracking-[0.22em] text-gold">
-              NSW &amp; South Australia
+              NSW & South Australia
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
-              Professional Cleaning &amp; Removal Services
+              Professional Cleaning & Removal Services
             </h1>
-            <p className="text-lg text-white/75 leading-relaxed max-w-2xl">
-              Residential &middot; Commercial &middot; Builders Cleaning &middot; End of Lease &middot; Office &amp; Facility Cleaning &middot; Home &amp; Office Removals
-            </p>
-            <p className="font-mono-label text-sm uppercase tracking-[0.14em] text-white/50">
-              Fast Quotes &middot; Reliable Teams &middot; Flexible Scheduling
-            </p>
+                      <p className="text-lg text-white/75 leading-relaxed max-w-2xl">
+            Residential, Commercial, Builders Cleaning, End of Lease, Office &amp; Facility Cleaning, Home &amp; Office Removals
+          </p>
+          <p className="text-sm uppercase tracking-[0.14em] text-white/50">
+            Fast Quotes, Reliable Teams, Flexible Scheduling
+          </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Button href="/quote" variant="gold">Get a Free Quote</Button>
               <Button href={company.phoneHref} variant="outline-light">Call Now</Button>
