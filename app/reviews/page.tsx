@@ -36,7 +36,7 @@ export default async function ReviewsPage() {
               <SectionHeading
                 eyebrow="Customer reviews"
                 title={reviews.length > 0 ? `${reviews.length} review${reviews.length === 1 ? "" : "s"}` : "Be the first to leave a review"}
-                description={reviews.length > 0 ? "Feedback from households and businesses we've worked with." : "No reviews have been published yet — check back soon, or share your own experience."}
+                description={reviews.length > 0 ? "Feedback from households and businesses we've worked with." : "No reviews have been published yet check back soon, or share your own experience."}
               />
 
               {reviews.length > 0 ? (

@@ -15,7 +15,7 @@ export default function QuotePage() {
       <PageHero
         eyebrow="Get a Free Quote"
         title="Tell us what you need"
-        description="A few quick steps and we'll come back with a tailored, obligation-free quote. Pricing depends on the scope and requirements of each job."
+        description="A few quick steps and we'll come back with a tailored, obligation free quote. Pricing depends on the scope and requirements of each job."
       />
       <section className="bg-paper">
         <Container className="py-14 sm:py-20">

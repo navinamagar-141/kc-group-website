@@ -6,13 +6,13 @@ import { company, serviceAreas, whatsappHref } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact KC Group of Companies Pty Ltd — cleaning and removals across NSW and South Australia.",
+  description: "Contact KC Group of Companies Pty Ltd cleaning and removals across NSW and South Australia.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Get in touch with KC Group" description="Call, WhatsApp, email, or send through a quote request — whichever is easiest for you." />
+      <PageHero eyebrow="Contact" title="Get in touch with KC Group" description="Call, WhatsApp, email, or send through a quote request whichever is easiest for you." />
 
       <section className="bg-paper">
         <Container className="py-16 sm:py-20">

@@ -27,7 +27,7 @@ export default function ThankYouPage() {
             <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold">Thanks — your request is in</h1>
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold">Thanks! Your request is in</h1>
         <p className="text-white/65 max-w-md">
           KC Group has received your quote request and will be in touch shortly to confirm the details and provide a tailored quote.
         </p>
