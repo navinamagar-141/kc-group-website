@@ -28,14 +28,11 @@ export default function AboutPage() {
               <div className="flex flex-col gap-5 max-w-xl">
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Our story</h2>
                 <p className="text-ink/70 leading-relaxed">
-                  {company.legalName} began in {company.established} as a cleaning company, working with households and businesses across New South Wales. Over time, the same focus on reliable, presentation focused work led to the addition of a removals service, and today KC Group is established as a two service business covering both cleaning and removals.
-                </p>
+                  We started with cleaning in 2018, and as our customers needs grew, we expanded into removals and car detailing.                </p>
                 <p className="text-ink/70 leading-relaxed">
-                  That shared foundation means clients get one point of contact whether the job is a routine office clean or a full business relocation, with the same standard of communication and care applied across both sides of the business.
-                </p>
+                  Today KC Group of Companies Pty Ltd works across New South Wales and South Australia. Clients get one point of contact whether the job is a routine office clean, a full business relocation or a car detail, with the same standard of communication and care across every service.                </p>
                 <p className="text-ink/70 leading-relaxed">
-                  Whether you&apos;re a homeowner, a tenant, a landlord, a builder or a business owner, the process starts the same way: tell us what you need, and we&apos;ll come back with a tailored, obligation-free quote.
-                </p>
+                  Whether you are a homeowner, a tenant, a landlord, a builder or a business owner, the process starts the same way: tell us what you need, and we will come back with a tailored, obligation-free quote.                </p>
               </div>
             </FadeUp>
             <FadeUp delay={100}>
