@@ -46,7 +46,7 @@ export default async function Home() {
 </div>
         <Container className="relative py-20 sm:py-24 lg:py-28">
           <div className="flex flex-col gap-6 max-w-3xl">
-            <span className="font-mono-label text-xs uppercase tracking-[0.22em] text-gold">
+            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
               NSW & South Australia
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
@@ -185,7 +185,7 @@ export default async function Home() {
             {whyChooseUs.map((item, i) => (
               <FadeUp key={item.title} delay={i * 60}>
                 <div className="flex flex-col gap-2">
-                  <span className="font-mono-label text-xs text-gold">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm font-semibold text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
                   <p className="text-sm text-ink/65 leading-relaxed">{item.description}</p>
                 </div>
@@ -274,7 +274,7 @@ export default async function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {serviceAreas.map((area) => (
                   <div key={area.abbr} className="rounded-2xl border border-ink/10 bg-paper p-8 flex flex-col gap-2">
-                    <span className="font-mono-label text-xs uppercase tracking-[0.18em] text-gold">{area.abbr}</span>
+                    <span className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">{area.abbr}</span>
                     <span className="font-display text-2xl font-semibold text-ink">{area.name}</span>
                   </div>
                 ))}

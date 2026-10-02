@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
           {placeholders.map((n) => (
             <FadeUp key={n} delay={n * 60}>
               <div className="rounded-2xl border border-dashed border-ink/20 bg-paper p-6 flex flex-col gap-4 h-full">
-                <span className="font-mono-label text-xs uppercase tracking-[0.14em] text-gold">
+                <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
                   Review placeholder
                 </span>
                 <p className="text-sm text-ink/45 leading-relaxed">

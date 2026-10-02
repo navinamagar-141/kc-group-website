@@ -28,7 +28,7 @@ export default function PageHero({
       </div>
       <Container className="relative py-20 sm:py-24">
         <div className="max-w-3xl flex flex-col gap-5">
-          <span className="font-mono-label text-xs uppercase tracking-[0.2em] text-gold">{eyebrow}</span>
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{eyebrow}</span>
           <h1 className="font-display text-4xl sm:text-5xl font-semibold leading-[1.08]">{title}</h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">{description}</p>
           {children}

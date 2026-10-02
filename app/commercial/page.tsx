@@ -28,7 +28,7 @@ export default function CommercialPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FadeUp>
               <div id="commercial-cleaning" className="scroll-mt-24 rounded-2xl border border-ink/10 bg-white p-8 sm:p-10 flex flex-col gap-5 h-full">
-                <span className="font-mono-label text-xs uppercase tracking-[0.18em] text-gold">Path One</span>
+                <span className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Path One</span>
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Commercial Cleaning</h2>
                 <p className="text-ink/65 text-sm leading-relaxed">
                   Professional cleaning solutions for business environments — offices, retail, hospitality, facilities and construction or handover sites.
@@ -48,7 +48,7 @@ export default function CommercialPage() {
 
             <FadeUp delay={100}>
               <div id="commercial-removals" className="scroll-mt-24 rounded-2xl border border-ink/10 bg-white p-8 sm:p-10 flex flex-col gap-5 h-full">
-                <span className="font-mono-label text-xs uppercase tracking-[0.18em] text-gold">Path Two</span>
+                <span className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Path Two</span>
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Commercial Removals</h2>
                 <p className="text-ink/65 text-sm leading-relaxed">
                   Practical relocation support for businesses and workplaces — office moves and other commercial relocation requirements.

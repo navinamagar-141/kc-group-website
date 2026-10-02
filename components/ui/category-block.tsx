@@ -5,7 +5,7 @@ export default function CategoryBlock({ category, index }: { category: ServiceCa
   return (
     <div id={category.slug} className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 py-12 border-t border-ink/10 first:border-t-0 first:pt-0">
       <div className="flex flex-col gap-3">
-        <span className="font-mono-label text-xs text-gold">{String(index + 1).padStart(2, "0")}</span>
+        <span className="text-sm font-semibold text-gold">{String(index + 1).padStart(2, "0")}</span>
         <h3 className="font-display text-2xl sm:text-3xl font-semibold text-ink">{category.title}</h3>
         <p className="text-ink/65 text-sm leading-relaxed max-w-sm">{category.intro}</p>
       </div>

@@ -39,17 +39,17 @@ export default function AboutPage() {
               <div className="rounded-2xl border border-ink/10 bg-white p-8 flex flex-col gap-6">
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <p className="font-mono-label text-xs uppercase tracking-[0.14em] text-gold mb-1">Started As</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold mb-1">Started As</p>
                     <p className="font-display text-xl font-semibold text-ink">Cleaning ({company.established})</p>
                   </div>
                   <div>
-                    <p className="font-mono-label text-xs uppercase tracking-[0.14em] text-gold mb-1">Today</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold mb-1">Today</p>
                     <p className="font-display text-xl font-semibold text-ink">Cleaning &amp; Removals</p>
                   </div>
                 </div>
                 <div className="h-px bg-ink/10" />
                 <div>
-                  <p className="font-mono-label text-xs uppercase tracking-[0.14em] text-gold mb-2">Service Areas</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold mb-2">Service Areas</p>
                   <ul className="flex flex-col gap-1">
                     {serviceAreas.map((area) => (
                       <li key={area.abbr} className="text-ink/75 text-sm">{area.name}</li>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             {whyChooseUs.map((item, i) => (
               <FadeUp key={item.title} delay={i * 60}>
                 <div className="flex flex-col gap-2">
-                  <span className="font-mono-label text-xs text-gold">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm font-semibold text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
                   <p className="text-sm text-ink/65 leading-relaxed">{item.description}</p>
                 </div>

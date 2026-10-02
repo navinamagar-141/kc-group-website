@@ -12,7 +12,7 @@ export default function CommercialCta() {
       </span>
       <Container className="relative py-16 sm:py-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
         <div className="max-w-xl flex flex-col gap-2">
-          <span className="font-mono-label text-xs uppercase tracking-[0.2em] text-ink/70">Commercial Cleaning</span>
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/70">Commercial Cleaning</span>
           <h2 className="font-display text-2xl sm:text-3xl font-bold">
             Request a Free Site Inspection &amp; Tailored Proposal
           </h2>

@@ -65,7 +65,7 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-mono-label text-xs uppercase tracking-[0.18em] text-gold mb-4">Company</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-gold mb-4">Company</h3>
             <ul className="flex flex-col gap-3">
               {footerNav.company.map((item) => (
                 <li key={item.href}>
@@ -78,7 +78,7 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-mono-label text-xs uppercase tracking-[0.18em] text-gold mb-4">Services</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-gold mb-4">Services</h3>
             <ul className="flex flex-col gap-3">
               {footerNav.services.map((item) => (
                 <li key={item.href}>
@@ -91,7 +91,7 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-mono-label text-xs uppercase tracking-[0.18em] text-gold mb-4">Contact</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-gold mb-4">Contact</h3>
             <ul className="flex flex-col gap-3 text-sm text-white/70">
               <li>
                 <a href={`mailto:${company.email}`} className="hover:text-white transition-colors">
@@ -103,7 +103,7 @@ export default function SiteFooter() {
                   {company.phone}
                 </a>
               </li>
-              <li className="pt-2 text-white/50 font-mono-label text-xs uppercase tracking-[0.14em]">Service Areas</li>
+              <li className="pt-2 text-white/50 text-sm font-semibold uppercase tracking-[0.14em]">Service Areas</li>
               {serviceAreas.map((area) => (
                 <li key={area.abbr}>{area.name}</li>
               ))}

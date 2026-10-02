@@ -29,7 +29,7 @@ body {
   font-family: var(--font-display);
 }
 
-.font-mono-label {
+.font-semibold {
   font-family: var(--font-mono);
 }
 

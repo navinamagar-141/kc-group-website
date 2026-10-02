@@ -45,7 +45,7 @@ export default async function ReviewsPage() {
                     <div key={review.id} className="rounded-2xl border border-ink/10 bg-white p-6 flex flex-col gap-3">
                       <div className="flex items-center justify-between">
                         <StarDisplay rating={review.rating} />
-                        <span className="font-mono-label text-xs uppercase tracking-[0.14em] text-gold">{review.serviceType}</span>
+                        <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">{review.serviceType}</span>
                       </div>
                       <p className="text-ink/75 text-sm leading-relaxed">{review.message}</p>
                       <p className="font-display text-sm font-semibold text-ink">{review.name}</p>

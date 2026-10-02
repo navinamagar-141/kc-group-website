@@ -14,7 +14,7 @@ export default function SectionHeading({
 
   return (
     <div className="max-w-2xl flex flex-col gap-3">
-      <span className="font-mono-label text-xs uppercase tracking-[0.2em] text-gold">{eyebrow}</span>
+      <span className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{eyebrow}</span>
       <h2 className={`font-display text-3xl sm:text-4xl font-semibold leading-tight ${titleColor}`}>
         {title}
       </h2>
