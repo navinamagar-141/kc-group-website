@@ -32,8 +32,8 @@ export default async function Home() {
     <>
       {/* 1. HERO — service + location + Call / WhatsApp / Free Quote */}
       <section className="relative bg-ink text-white overflow-hidden">
-     <div 
-  className="absolute -right-10 top-1/2 -translate-y-1/2 w-[320px] h-[320px] opacity-10 pointer-events-none"
+    <div 
+  className="absolute right-12 top-1/2 -translate-y-1/2 w-[360px] h-[360px] opacity-15 pointer-events-none hidden md:block"
   aria-hidden="true"
 >
   <Image
