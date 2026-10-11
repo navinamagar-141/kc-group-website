@@ -1,8 +1,3 @@
-// Shared, pluggable transactional email sender. No credentials live in
-// frontend code — everything reads from environment variables. Without
-// RESEND_API_KEY set, emails are logged to the console instead of sent, so
-// nothing is silently lost during local development or setup.
-
 type Attachment = { filename: string; content: string };
 
 export async function sendEmail(params: {
@@ -15,12 +10,21 @@ export async function sendEmail(params: {
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
-    console.log("[email] Provider not configured. Would send:", {
+    // In production a missing key must fail visibly, not look like success.
+    if (process.env.NODE_ENV === "production") {
+      throw new Error("RESEND_API_KEY is not set");
+    }
+    console.log("[email] RESEND_API_KEY not set. Would send:", {
       to: params.to,
       subject: params.subject,
     });
     return;
   }
+
+  // Works immediately with no DNS setup (delivers only to your Resend account email).
+  // Later, once kc-group.com.au is verified in Resend, set EMAIL_FROM in Vercel,
+  // e.g. KC Group <notifications@kc-group.com.au>. No code change needed.
+  const from = process.env.EMAIL_FROM || "KC Group Website <onboarding@resend.dev>";
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -29,7 +33,7 @@ export async function sendEmail(params: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "KC Group Website <notifications@kcgroup.com.au>",
+      from,
       to: params.to,
       reply_to: params.replyTo,
       subject: params.subject,
@@ -39,6 +43,7 @@ export async function sendEmail(params: {
   });
 
   if (!res.ok) {
-    throw new Error(`Email provider responded with ${res.status}`);
+    const detail = await res.text();
+    throw new Error(`Resend responded ${res.status}: ${detail}`);
   }
 }
