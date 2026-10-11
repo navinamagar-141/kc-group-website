@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {whyChooseUs.map((item, i) => (
               <FadeUp key={item.title} delay={i * 60}>
-                <div className="flex flex-col gap-2">
+                <div className="lift group flex h-full flex-col gap-2 rounded-2xl border border-ink/10 bg-paper p-6 hover:border-gold/60 hover:shadow-[0_18px_40px_-24px_rgba(14,17,22,0.35)]">
                   <span className="text-sm font-semibold text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
                   <p className="text-sm text-ink/65 leading-relaxed">{item.description}</p>
