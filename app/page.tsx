@@ -3,7 +3,6 @@ import Button from "@/components/ui/button";
 import SectionHeading from "@/components/ui/section-heading";
 import ServiceCard from "@/components/ui/service-card";
 import FadeUp from "@/components/ui/fade-up";
-import CtaBanner from "@/components/ui/cta-banner";
 import FaqAccordion from "@/components/ui/faq-accordion";
 import { StarDisplay } from "@/components/ui/stars";
 import TrustBadges from "@/components/sections/trust-badges";
@@ -14,10 +13,12 @@ import PartnerLogos from "@/components/sections/partner-logos";
 import CaseStudies from "@/components/sections/case-studies";
 import BeforeAfterTeaser from "@/components/sections/before-after-teaser";
 import CommercialCta from "@/components/sections/commercial-cta";
+import QuickEnquiry from "@/components/sections/quick-enquiry";
 import { company, serviceAreas, whyChooseUs, generalFaqs, whatsappHref } from "@/lib/site-config";
 import { servicePages } from "@/lib/service-pages";
 import { getApprovedReviews } from "@/lib/reviews-store";
 import Image from "next/image";
+import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
@@ -32,32 +33,33 @@ export default async function Home() {
     <>
       {/* 1. HERO — service + location + Call / WhatsApp / Free Quote */}
       <section className="relative bg-ink text-white overflow-hidden">
-    <div 
-  className="absolute right-12 top-1/2 -translate-y-1/2 w-[360px] h-[360px] opacity-15 pointer-events-none hidden md:block"
-  aria-hidden="true"
->
-  <Image
-    src="/images/logo.png"
-    alt=""
-    fill
-    className="object-contain"
-    priority
-  />
-</div>
+        <div 
+          className="absolute right-12 top-1/2 -translate-y-1/2 w-[360px] h-[360px] opacity-15 pointer-events-none hidden md:block"
+          aria-hidden="true"
+        >
+          <Image
+            src="/images/logo.png"
+            alt=""
+            fill
+            sizes="360px"
+            className="object-contain"
+            priority
+          />
+        </div>
         <Container className="relative py-20 sm:py-24 lg:py-28">
           <div className="flex flex-col gap-6 max-w-3xl">
-            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
               NSW & South Australia
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
               Professional Cleaning & Removal Services
             </h1>
-                      <p className="text-lg text-white/75 leading-relaxed max-w-2xl">
-            Residential, Commercial, Builders Cleaning, End of Lease, Office &amp; Facility Cleaning, Home &amp; Office Removals
-          </p>
-          <p className="text-sm uppercase tracking-[0.14em] text-white/50">
-            Fast Quotes, Reliable Teams, Flexible Scheduling
-          </p>
+            <p className="text-lg text-white/75 leading-relaxed max-w-2xl">
+              Residential, Commercial, Builders Cleaning, End of Lease, Office &amp; Facility Cleaning, Home &amp; Office Removals
+            </p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
+              Fast Quotes, Reliable Teams, Flexible Scheduling
+            </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Button href="/quote" variant="gold">Get a Free Quote</Button>
               <Button href={company.phoneHref} variant="outline-light">Call Now</Button>
@@ -131,7 +133,7 @@ export default async function Home() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {mostPopular.map((service, i) => (
               <FadeUp key={service.slug} delay={i * 60}>
-                <a href={`/${service.slug}`} className="lift block rounded-xl border border-ink/10 bg-paper p-6 h-full hover:border-gold/50">
+                <a href={`/${service.slug}`} className="lift block rounded-xl border border-ink/10 bg-paper p-6 h-full hover:border-gold/50 transition-all duration-300">
                   <h3 className="font-display text-base font-semibold text-ink mb-2">{service.navLabel}</h3>
                   <p className="text-sm text-ink/60 leading-relaxed mb-3">{service.intro}</p>
                   <span className="text-xs font-semibold uppercase tracking-wide text-gold">View Service →</span>
@@ -184,7 +186,7 @@ export default async function Home() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {whyChooseUs.map((item, i) => (
               <FadeUp key={item.title} delay={i * 60}>
-                <div className="lift group flex h-full flex-col gap-2 rounded-2xl border border-ink/10 bg-paper p-6 hover:border-gold/60 hover:shadow-[0_18px_40px_-24px_rgba(14,17,22,0.35)]">
+                <div className="lift group flex h-full flex-col gap-2 rounded-2xl border border-ink/10 bg-paper p-6 transition-all duration-300 hover:border-gold/60 hover:shadow-[0_18px_40px_-24px_rgba(14,17,22,0.35)]">
                   <span className="text-sm font-semibold text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
                   <p className="text-sm text-ink/65 leading-relaxed">{item.description}</p>
@@ -260,23 +262,27 @@ export default async function Home() {
         </section>
       ) : null}
 
-      {/* 11. Areas We Service */}
+      {/* 11. Areas We Service (WITH HOVER EFFECT) */}
       <section id="service-areas" className="bg-white">
         <Container className="py-20 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
             <FadeUp>
               <SectionHeading eyebrow="Service area" title="Areas We Service" description="KC Group operates across New South Wales and South Australia." />
               <div className="mt-8">
-                <Button href="/sydney" variant="outline-dark">Browse Service Areas</Button>
+                <Button href="/locations" variant="outline-dark">Browse Service Areas</Button>
               </div>
             </FadeUp>
             <FadeUp delay={100}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {serviceAreas.map((area) => (
-                  <div key={area.abbr} className="rounded-2xl border border-ink/10 bg-paper p-8 flex flex-col gap-2">
-                    <span className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">{area.abbr}</span>
-                    <span className="font-display text-2xl font-semibold text-ink">{area.name}</span>
-                  </div>
+                  <Link 
+                    key={area.abbr} 
+                    href={`/locations`}
+                    className="lift group flex flex-col gap-2 rounded-2xl border border-ink/10 bg-paper p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_18px_40px_-24px_rgba(14,17,22,0.35)]"
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{area.abbr}</span>
+                    <span className="font-display text-2xl font-semibold text-ink transition-colors group-hover:text-gold">{area.name}</span>
+                  </Link>
                 ))}
               </div>
             </FadeUp>
@@ -298,13 +304,8 @@ export default async function Home() {
         </Container>
       </section>
 
-      {/* 14. Final large Free Quote CTA */}
-      <CtaBanner
-        title="Need a cleaner or a removal team?"
-        description="Tell us what you need and we'll come back with a tailored, obligation-free quote."
-        ctaLabel="Get My Free Quote"
-        ctaHref="/quote"
-      />
+      {/* 14. Quick Enquiry Form */}
+      <QuickEnquiry />
     </>
   );
 }
