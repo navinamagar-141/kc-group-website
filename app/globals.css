@@ -159,3 +159,15 @@ span[class*="uppercase"],
   letter-spacing: 0.15em !important;
   font-weight: 600;
 }
+
+/* Fix invisible text in dropdown selects on dark background */
+select option {
+  background-color: #ffffff !important;
+  color: #0e1116 !important; /* Dark text for light option background */
+}
+
+/* Ensure selected option in dark container remains visible */
+select {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
