@@ -101,16 +101,61 @@ body {
   left: 0;
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-.fade-up-enter {
-  animation: fade-up 0.6s ease both;
+.marquee-track {
+  animation: marquee-scroll 40s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* Universal Card Hover Effects Across Entire Website */
+.lift,
+[class*="rounded-2xl"],
+[class*="rounded-xl"],
+[class*="border"] {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Enable smooth lift and gold border hover effect for all interactive cards */
+div[class*="border"]:hover,
+a[class*="border"]:hover,
+.lift:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.6) !important; /* KC Group Gold Accent */
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   Global Typography & Professional Polish
+   ========================================== */
+
+/* Ensure all headings use the primary font family uniformly */
+h1, h2, h3, h4, h5, h6, 
+.font-display, 
+.font-sans {
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* Standardize body text for high readability and professional weight */
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure small labels and eyebrows look clean and sharp */
+span[class*="uppercase"], 
+.font-mono-label {
+  letter-spacing: 0.15em !important;
+  font-weight: 600;
 }
