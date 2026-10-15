@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LogoMark from "@/components/ui/logo-mark";
+import Image from "next/image";
 import Container from "@/components/ui/container";
 import { company, footerNav, socialLinks, serviceAreas } from "@/lib/site-config";
 
@@ -39,7 +39,16 @@ export default function SiteFooter() {
       <Container className="pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
-            <LogoMark className="h-10" />
+            {/* Clean, well-proportioned logo image */}
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/logo.png"
+                alt="KC Group Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
+            </Link>
             <p className="text-sm leading-relaxed text-white/60 max-w-xs">{company.description}</p>
             {activeSocials.length > 0 ? (
               <div className="flex items-center gap-3 pt-2">
