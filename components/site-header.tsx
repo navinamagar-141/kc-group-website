@@ -80,10 +80,32 @@ export default function SiteHeader() {
         </button>
       </Container>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile-Only Horizontal Scroll Quick-Nav Bar */}
+      <div className="lg:hidden bg-charcoal/80 border-t border-white/5 overflow-x-auto whitespace-nowrap py-2 px-4 scrollbar-none">
+        <div className="flex items-center gap-2 text-xs font-medium">
+          {primaryNav.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-3 py-1.5 rounded-full transition-colors ${
+                  active
+                    ? "bg-gold text-ink font-bold"
+                    : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Full-Screen Mobile Drawer */}
       <div
         id="mobile-menu"
-        className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 bg-ink transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed inset-x-0 top-[112px] bottom-0 bg-ink transition-transform duration-300 ease-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
