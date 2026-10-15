@@ -1,28 +1,41 @@
+import Image from "next/image";
 import Link from "next/link";
-import ServiceTile from "@/components/sections/service-tile";
 import { galleryPhotos } from "@/lib/gallery";
-import { company } from "@/lib/site-config";
 
-export default function WorkGalleryTeaser() {
-  const featured = galleryPhotos.slice(0, 7);
+export default function BeforeAfterTeaser() {
+  // Select first 8 photos for clean grid display
+  const teaserPhotos = galleryPhotos.slice(0, 8);
 
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {featured.map((photo) => (
-        <ServiceTile key={photo.src} photo={photo} />
-      ))}
-      <div className="flex aspect-square flex-col items-center justify-center gap-3 rounded-xl border border-gold/40 bg-charcoal p-4 text-center">
-        <h3 className="font-display text-lg font-bold text-white sm:text-xl">Need a quote?</h3>
-        <Link
-          href="/quote"
-          className="rounded-full bg-gold px-5 py-2 text-xs font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-white"
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      {teaserPhotos.map((photo) => (
+        <div
+          key={photo.title}
+          className="group relative overflow-hidden rounded-2xl bg-charcoal aspect-[4/3] sm:aspect-square border border-white/10"
         >
-          Get a free quote
-        </Link>
-        <a href={company.phoneHref} className="text-sm text-white/70 hover:text-gold">
-          {company.phone}
-        </a>
-      </div>
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            style={{ objectPosition: photo.position || "center" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent p-5 flex flex-col justify-end">
+            <h3 className="font-display text-lg font-bold text-white mb-2">
+              {photo.title}
+            </h3>
+            <div>
+              <Link
+                href={photo.href}
+                className="inline-flex items-center justify-center rounded-full bg-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-ink transition-transform duration-300 hover:scale-105"
+              >
+                Find Out More
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

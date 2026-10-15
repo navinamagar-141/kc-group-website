@@ -27,25 +27,19 @@ export default function SiteHeader() {
     };
   }, [menuOpen]);
 
-  // Close the mobile menu on route change. This is a deliberate exception to
-  // the "no setState in effect" rule — there's no prop/key to derive this
-  // from, since the route itself lives outside React's props tree.
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- deliberate: closing the menu on route change has no prop/key to derive from.
-    setMenuOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/95 backdrop-blur border-b border-white/10" : "bg-ink"
+        scrolled ? "bg-ink/95 backdrop-blur border-b border-white/10" : "bg-ink border-b border-white/10"
       }`}
     >
       <Container className="flex items-center justify-between h-[72px]">
-        <Link href="/" className="shrink-0" aria-label="KC Group home">
-          <LogoMark className="h-10" />
+        {/* Logo */}
+        <Link href="/" className="shrink-0 flex items-center" aria-label="KC Group home">
+          <LogoMark className="h-9 sm:h-10 w-auto" />
         </Link>
 
+        {/* Desktop Navigation */}
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-6 xl:gap-8">
           {primaryNav.map((item) => {
             const active = pathname === item.href;
@@ -64,15 +58,17 @@ export default function SiteHeader() {
           })}
         </nav>
 
+        {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Button href="/quote" variant="gold">
             Get a Free Quote
           </Button>
         </div>
 
+        {/* Mobile Menu Toggle Button */}
         <button
           type="button"
-          className="lg:hidden inline-flex flex-col items-center justify-center gap-1.5 w-11 h-11 rounded-md text-white"
+          className="lg:hidden inline-flex flex-col items-center justify-center gap-1.5 w-11 h-11 rounded-md text-white hover:text-gold transition-colors focus:outline-none"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -84,6 +80,7 @@ export default function SiteHeader() {
         </button>
       </Container>
 
+      {/* Mobile Navigation Drawer */}
       <div
         id="mobile-menu"
         className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 bg-ink transition-transform duration-300 ease-out ${
@@ -96,7 +93,7 @@ export default function SiteHeader() {
               key={item.href}
               href={item.href}
               onClick={() => setMenuOpen(false)}
-              className="py-4 text-lg font-display font-medium text-white/90 border-b border-white/10 hover:text-gold"
+              className="py-4 text-lg font-display font-medium text-white/90 border-b border-white/10 hover:text-gold transition-colors"
             >
               {item.label}
             </Link>
